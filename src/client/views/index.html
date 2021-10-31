@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Article Analysis</title>
+  </head>
+
+  <body>
+    <header>
+      <h3>Article Analyzer</h3>
+    </header>
+
+    <main>
+      <section>
+        <form id="form">
+          <input
+            id="articleUrl"
+            name="input"
+            value=""
+            placeholder="Article URL"
+          />
+          <input type="submit" name="" id="submitBtn" value="submit" />
+        </form>
+      </section>
+
+      <section id="resultsSection">
+        <strong>Analysis</strong>
+        <p class="resultMetric" id="resultsSubjectivity"></p>
+        <p class="resultMetric" id="resultsPolarity"></p>
+        <p class="resultMetric" id="resultsConfidence"></p>
+        <p class="resultMetric" id="resultsAgreement"></p>
+        <p class="resultMetric" id="resultsIrony"></p>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <p>This is a footer</p>
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </body>
+</html>
