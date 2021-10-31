@@ -16,8 +16,8 @@ app.use(express.static('dist'));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  // res.sendFile('dist/index.html');
-  res.sendFile(path.resolve('src/client/views/index.html'));
+  res.sendFile('dist/index.html');
+  // res.sendFile(path.resolve('src/client/views/index.html'));
 });
 
 app.post('/analyze', async (req, res) => {
