@@ -3,7 +3,6 @@ const express = require('express');
 
 const path = require('path');
 const dotenv = require('dotenv');
-// const multer = require('multer');
 const fetch = require('node-fetch');
 
 dotenv.config();
@@ -29,7 +28,6 @@ app.post('/analyze', async (req, res) => {
   res.send(data);
 });
 
-// designates what port the app will listen to for incoming requests
 app.listen(8088, () => {
   console.log('Express is listening on port 8088!');
 });
