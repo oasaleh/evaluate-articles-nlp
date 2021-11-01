@@ -5,7 +5,6 @@ async function postData(backendServerUrl = '', data = {}) {
     method: 'POST',
     credentials: 'same-origin',
     mode: 'cors',
-    cache: 'no-cache',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -44,11 +43,10 @@ function handleSubmit(event) {
       resultsSection = document.getElementById('resultsSection');
       resultsSection.setAttribute('style', 'display: flex;');
 
-      resultsSubjectivity.innerText = processedData.subjectivity.toLowerCase();
-      // resultsPolarity.innerText = processedData.polarity.toLowerCase();
-      resultsConfidence.innerText = processedData.confidence.toLowerCase();
-      resultsAgreement.innerText = processedData.agreement.toLowerCase();
-      resultsIrony.innerText = processedData.irony.toLowerCase();
+      resultsSubjectivity.innerText = processedData.subjectivity;
+      resultsConfidence.innerText = processedData.confidence;
+      resultsAgreement.innerText = processedData.agreement;
+      resultsIrony.innerText = processedData.irony;
     });
 }
 
