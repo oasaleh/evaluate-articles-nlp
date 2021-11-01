@@ -1,5 +1,6 @@
+import { isValid } from './isValid';
+
 async function postData(backendServerUrl = '', data = {}) {
-  // Default options are marked with *
   const response = await fetch(backendServerUrl, {
     method: 'POST',
     credentials: 'same-origin',
@@ -19,8 +20,13 @@ async function postData(backendServerUrl = '', data = {}) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  document.getElementById('loadingBar').style.display = 'block';
+
   const urlText = document.getElementById('articleUrl').value;
+  if (!isValid(urlText)) {
+    alert('Please enter a valid URL');
+    return;
+  }
+  document.getElementById('loadingBar').style.display = 'block';
 
   let processedData;
   let resultsSection;
